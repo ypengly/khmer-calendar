@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ប្រតិទិនខ្មែរ | Khmer Calendar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;600;700&family=Inter:wght@400;600&display=swap">
+<link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+<header>
+ <h1>ប្រតិទិនខ្មែរ | Khmer Calendar</h1>
+ <div class="row">
+  <div role="group" aria-label="Language" class="lang"><button id="lk">ភាសាខ្មែរ</button><button id="le">English</button></div>
+  <select id="theme" aria-label="Theme"></select>
+ </div>
+</header>
+<main>
+ <section class="card today" aria-live="polite"><div id="tDate" class="big"></div><div id="tLun"></div><div id="tEv"></div><button id="goToday"></button></section>
+ <section class="card">
+  <div class="bar">
+   <div class="row"><button id="prev">‹</button><button id="next">›</button></div>
+   <div class="row"><select id="mSel" aria-label="Month"></select><input id="ySel" type="number" min="1900" max="2100" aria-label="Year" style="width:92px"><input id="jump" type="date" aria-label="Jump to date"></div>
+   <div class="row noprint"><label class="chk"><input type="checkbox" id="oLun"><span id="lLun"></span></label><label class="chk"><input type="checkbox" id="oInt"><span id="lInt"></span></label><button id="printBtn"></button></div>
+  </div>
+  <div class="grid" id="wds"></div><div class="grid" id="days"></div>
+  <div class="legend" id="legend"></div>
+ </section>
+ <section class="card"><h2 id="selTitle"></h2><ul id="selList"></ul>
+  <form id="evf" class="row noprint"><input type="hidden" id="evId">
+   <label><span id="lTk"></span><input id="evKm" maxlength="80"></label><label><span id="lTe"></span><input id="evEn" maxlength="80"></label>
+   <label><span id="lDs"></span><input id="evS" type="date"></label><label><span id="lDe"></span><input id="evE" type="date"></label>
+   <button type="submit" id="evSave"></button><button type="button" id="evCancel" hidden></button></form>
+  <div id="msg" role="alert"></div><p class="mut" id="local"></p>
+ </section>
+ <section class="card noprint"><h2 id="upT"></h2><ul id="upList"></ul></section>
+ <section class="card noprint">
+  <div class="bar"><input id="q" type="search" aria-label="Search" style="flex:1;min-width:200px"><select id="flt" aria-label="Filter"></select>
+  <div class="row"><button id="csv"></button><button id="ics"></button></div></div><ul id="res"></ul>
+ </section>
+ <p class="mut" id="dataNote"></p>
+</main>
+<script src="src/vendor/momentkh.js"></script>
+<script type="module" src="src/js/app.js"></script>
+</body>
+</html>

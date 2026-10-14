@@ -1,0 +1,1 @@
+{"name":"khmer-calendar","version":"1.0.0","private":true,"type":"module","description":"Bilingual Khmer lunar + Gregorian calendar (no build step)","scripts":{"start":"node server.mjs","test":"node tests/lunar.test.mjs"},"license":"MIT"}
